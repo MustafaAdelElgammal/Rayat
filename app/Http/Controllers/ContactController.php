@@ -42,8 +42,6 @@ class ContactController extends Controller
              $message->from('no-reply@healthybarkw.com');
              $message->subject('web.from' . ' ' . trim('$this->config->site_name') .' : ' .'web.contact_form_message');
          });
-
-        dd($request->all());
     }
 
     /**
