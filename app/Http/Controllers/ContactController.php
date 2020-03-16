@@ -35,11 +35,9 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-//        Mail::to($request->email)->send(new ContactMail());
-
         $data = $request->all();
          \Mail::send('send_contact_mail', $data, function($message) use ($data) {
-             $message->to(trim('mustafa.adel.elgammal@gmail.com'));
+             $message->to(trim('email'));
              $message->replyTo($data['email'], $data['name'] );
              $message->from('no-reply@healthybarkw.com');
              $message->subject('web.from' . ' ' . trim('$this->config->site_name') .' : ' .'web.contact_form_message');
